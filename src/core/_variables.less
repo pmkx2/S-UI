@@ -1,0 +1,202 @@
+/*
+	_variables.less
+	全局变量的配置文件
+*/
+
+/**
+	类型命名
+	large: 			大
+	small: 			小
+	vertical: 		垂直
+	horizontal: 	水平
+*/
+
+
+//静态文件所在目录
+@base-url: "../../";
+
+//-- 构成元素 --------------------------------------------------
+//S-UI基础色
+@base-color-white: 			#fff;		//白
+@base-color-grey-light: 	#f1f1f1;	//浅灰
+@base-color-grey: 			#ddd;		//灰
+@base-color-grey-dark-sub: 	#d7d7d7;	//深灰(浅)
+@base-color-grey-dark: 		#b7b7b7;	//深灰
+@base-color-grey-dark2: 	#989fa9;	//深灰2
+@base-color-black-light: 	#434a54;	//浅黑
+@base-color-black: 			#22262c;	//黑
+@base-color-blue: 			#3bafda;	//蓝
+@base-color-blue-light: 	#4fc1e9;	//浅蓝
+@base-color-green: 			#95be3e;	//绿
+@base-color-red: 			#ff6666;	//红
+
+
+
+//-- 基础元素 --------------------------------------------------
+//-- 背景色
+@bg-color-white: 			@base-color-white;			//白色
+@bg-color-grey-light: 		@base-color-grey-light;		//灰色（浅灰）
+
+//-- 边框色
+@border-color-grey-light: 	@base-color-grey-light;		//浅灰
+@border-color-grey: 		@base-color-grey;			//灰色
+
+//-- 基础字体大小
+@font-size-base:			14px;						//基础字体大小
+@font-size-small:			@font-size-base * 0.85;		// ~12px
+@font-size-large:			@font-size-base * 1.25;		// ~18px
+@font-size-large-big:		@font-size-base * 1.7;		// ~24px
+
+@font-size-h1:				@font-size-base * 2.6; 		// ~36px
+@font-size-h2:				@font-size-base * 2.15; 	// ~30px
+@font-size-h3:          	@font-size-base * 1.7; 		// ~24px
+@font-size-h4:          	@font-size-base * 1.25; 	// ~18px
+@font-size-h5:          	@font-size-base;
+@font-size-h6:          	@font-size-base * 0.85; 	// ~12px
+
+//-- 行高
+@line-height-base: 			1.5;	//1.5倍高
+@line-height-base-small: 	1.25;	//1.25倍高
+@line-height-base-large: 	1.75;	//1.75倍高
+
+//-- 内边距
+@padding-base-horizontal: 	5px;	//横向内边距
+@padding-base-vertical: 	10px;	//纵向内边距
+
+//-- 外边距
+@margin-base-horizontal: 	3px;	//横向外边距
+@margin-base-vertical: 		6px;	//纵向外边距
+
+//-- 边框圆角
+@border-radius-base: 		5px;
+@border-radius-small: 		3px;
+@border-radius-large: 		7px;
+
+//-- 输入框提示文字色
+@placeholder-color: 		@base-color-grey-dark;
+
+
+
+//-- 色彩组合 -----------------------------------------------------
+//-- 文字与背景色
+//黑
+@color-black-text: 			@base-color-white;
+@color-black-bg: 			@base-color-black;
+//浅黑
+@color-black-text: 			@base-color-white;
+@color-black-bg: 			@base-color-black;
+//浅黑
+@color-black-light-text: 	@base-color-white;
+@color-black-light-bg: 		@base-color-black-light;
+//深灰
+@color-grey-dark-text: 		@base-color-white;
+@color-grey-dark-bg: 		@base-color-grey-dark;
+//灰
+@color-grey-text: 			@base-color-white;
+@color-grey-bg: 			@base-color-grey;
+//绿
+@color-green-text: 			@base-color-white;
+@color-green-bg: 			@base-color-green;
+//蓝
+@color-blue-text: 			@base-color-white;
+@color-blue-bg: 			@base-color-blue;
+//红
+@color-red-text: 			@base-color-white;
+@color-red-bg: 				@base-color-red;
+//白
+@color-white-text: 			@base-color-black-light;
+@color-white-bg: 			@base-color-white;
+
+
+
+
+//-- 状态色彩组合 -----------------------------------------------------
+
+
+
+
+
+//-- 元素定义 -----------------------------------------------------
+//-- body
+@body-bg-color: 			@base-color-white;		//背景色
+
+//-- input
+
+//-- table
+
+//-- li
+
+
+
+
+//-- 组件 -----------------------------------------------------
+//-- button
+@btn-radius-base: 			@border-radius-base;	//默认圆角
+//默认：蓝色
+@btn-default-color: 		@base-color-white;
+@btn-default-bg: 			@base-color-blue;
+@btn-default-border: 		@base-color-blue;
+//成功：绿色
+@btn-success-color: 		@base-color-white;
+@btn-success-bg: 			@base-color-green;
+@btn-success-border: 		@base-color-green;
+//错误：红色
+@btn-error-color: 			@base-color-white;
+@btn-error-bg: 				@base-color-red;
+@btn-error-border: 			@base-color-red;
+//正常：白色
+@btn-normal-color: 			@base-color-black-light;
+@btn-normal-bg: 			@base-color-white;
+@btn-normal-border: 		@base-color-black-light;
+//停止：灰色
+@btn-hold-color: 			@base-color-white;
+@btn-hold-bg: 				@base-color-grey-dark-sub;
+@btn-hold-border: 			@base-color-grey-dark-sub;
+//禁用：深灰色
+@btn-desable-color: 		@base-color-white;
+@btn-desable-bg: 			@base-color-grey;
+@btn-desable-border: 		@base-color-grey;
+
+
+//-- input
+@input-placeholder-color: 	@placeholder-color;		//默认提示文字色
+//默认：白色
+@input-default-prompt: 		@base-color-black-light;
+@input-default-color: 		@base-color-black-light;
+@input-default-bg: 			@base-color-white;
+@input-default-border: 		@base-color-black-light;
+//成功：绿色
+@input-success-prompt: 		@base-color-green;
+@input-success-color: 		@base-color-black-light;
+@input-success-bg: 			@base-color-white;
+@input-success-border: 		@base-color-green;
+//错误：红色
+@input-error-prompt: 		@base-color-red;
+@input-error-color: 		@base-color-black-light;
+@input-error-bg: 			@base-color-white;
+@input-error-border: 		@base-color-red;
+//禁用：灰色
+@input-desable-prompt: 		@base-color-black-light;
+@input-desable-color: 		@base-color-black-light;
+@input-desable-bg: 			@base-color-grey-dark-sub;
+@input-desable-border: 		@base-color-black-light;
+
+
+//-- alert
+//默认：蓝色
+@alert-default-color: 		@base-color-blue;
+@alert-default-bg: 			@base-color-white;
+@alert-default-border: 		@base-color-grey-light;
+//成功：绿色
+@alert-success-color: 		@base-color-green;
+@alert-success-bg: 			@base-color-white;
+@alert-success-border: 		@base-color-grey-light;
+//错误：红色
+@alert-error-color: 		@base-color-red;
+@alert-error-bg: 			@base-color-white;
+@alert-error-border: 		@base-color-grey-light;
+//正常：灰色
+@alert-normal-color: 		@base-color-black-light;
+@alert-normal-bg: 			@base-color-white;
+@alert-normal-border: 		@base-color-black-light;
+
