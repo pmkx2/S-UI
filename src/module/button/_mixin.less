@@ -1,0 +1,27 @@
+/*
+--- mixin.less ---
+*/
+
+//-- 生成按钮 -----
+.build-button(@text-color, @bg-color, @border-color){
+	color: @text-color;
+	background: @bg-color;
+	border-color: @border-color;
+	//hover
+	&:hover, &.hover {
+		color: @text-color;
+	}
+}
+//禁止按钮状态
+.btn-notting(){
+	cursor: not-allowed;
+	&:hover,
+	&.hover {
+		box-shadow: none;
+	}
+	&:active,
+	&.active {
+		box-shadow: none;
+	}
+	opacity: @btn-desable-opacity;
+}

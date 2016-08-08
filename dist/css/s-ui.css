@@ -61,6 +61,17 @@
 .icon-kaijin:before {
   content: "\e601";
 }
+/*
+	_variables.less
+	全局变量的配置文件
+*/
+/**
+	类型命名
+	large: 			大
+	small: 			小
+	vertical: 		垂直
+	horizontal: 	水平
+*/
 html,
 body,
 h1,
@@ -468,13 +479,129 @@ body {
   font-size: 22px !important;
 }
 /*
-	_variables.less
-	全局变量的配置文件
+--- mixin.less ---
+公共使用的方法工具
 */
-/**
-	类型命名
-	large: 			大
-	small: 			小
-	vertical: 		垂直
-	horizontal: 	水平
+/*
+--- button.less ---
 */
+/*
+--- mixin.less ---
+*/
+.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #434a54;
+  font-size: 17.5px;
+  text-align: center;
+  line-height: 1.25;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #b7b7b7;
+  border-radius: 5px;
+}
+.btn:hover,
+.btn.hover {
+  color: #434a54;
+  text-decoration: none;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.btn:active,
+.btn.active {
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.35);
+}
+.btn.desable,
+.btn[disabled] {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+.btn.desable:hover,
+.btn[disabled]:hover,
+.btn.desable.hover,
+.btn[disabled].hover {
+  box-shadow: none;
+}
+.btn.desable:active,
+.btn[disabled]:active,
+.btn.desable.active,
+.btn[disabled].active {
+  box-shadow: none;
+}
+.btn-info {
+  color: #fff;
+  background: #3bafda;
+  border-color: #3bafda;
+}
+.btn-info:hover,
+.btn-info.hover {
+  color: #fff;
+}
+.btn-success {
+  color: #fff;
+  background: #95be3e;
+  border-color: #95be3e;
+}
+.btn-success:hover,
+.btn-success.hover {
+  color: #fff;
+}
+.btn-error {
+  color: #fff;
+  background: #ff6666;
+  border-color: #ff6666;
+}
+.btn-error:hover,
+.btn-error.hover {
+  color: #fff;
+}
+.btn-normal {
+  color: #434a54;
+  background: #fff;
+  border-color: #b7b7b7;
+}
+.btn-normal:hover,
+.btn-normal.hover {
+  color: #434a54;
+}
+.btn-hold {
+  color: #fff;
+  background: #b7b7b7;
+  border-color: #b7b7b7;
+}
+.btn-hold:hover,
+.btn-hold.hover {
+  color: #fff;
+}
+.btn-desable {
+  color: #fff;
+  background: #ddd;
+  border-color: #ddd;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+.btn-desable:hover,
+.btn-desable.hover {
+  color: #fff;
+}
+.btn-desable:hover,
+.btn-desable.hover {
+  box-shadow: none;
+}
+.btn-desable:active,
+.btn-desable.active {
+  box-shadow: none;
+}
+.btn-lg {
+  font-size: 23.8px;
+}
+.btn-sm {
+  font-size: 11.9px;
+}
+.btn-xs {
+  font-size: 11.9px;
+  padding: 2px 5px;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+}

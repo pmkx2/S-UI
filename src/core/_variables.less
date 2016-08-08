@@ -60,8 +60,10 @@
 @line-height-base-large: 	1.75;	//1.75倍高
 
 //-- 内边距
-@padding-base-horizontal: 	5px;	//横向内边距
-@padding-base-vertical: 	10px;	//纵向内边距
+@padding-base-horizontal: 	10px;	//横向内边距
+@padding-base-vertical: 	5px;	//纵向内边距
+@padding-small-horizontal: 	5px;	//横向内边距（小）
+@padding-small-vertical: 	2px;	//纵向内边距（小）
 
 //-- 外边距
 @margin-base-horizontal: 	3px;	//横向外边距
@@ -132,10 +134,11 @@
 //-- 组件 -----------------------------------------------------
 //-- button
 @btn-radius-base: 			@border-radius-base;	//默认圆角
+@btn-desable-opacity: 		0.7;					//禁用时的透明度
 //默认：蓝色
-@btn-default-color: 		@base-color-white;
-@btn-default-bg: 			@base-color-blue;
-@btn-default-border: 		@base-color-blue;
+@btn-info-color: 			@base-color-white;
+@btn-info-bg: 				@base-color-blue;
+@btn-info-border: 			@base-color-blue;
 //成功：绿色
 @btn-success-color: 		@base-color-white;
 @btn-success-bg: 			@base-color-green;
@@ -147,12 +150,12 @@
 //正常：白色
 @btn-normal-color: 			@base-color-black-light;
 @btn-normal-bg: 			@base-color-white;
-@btn-normal-border: 		@base-color-black-light;
-//停止：灰色
+@btn-normal-border: 		@base-color-grey-dark;
+//停止：深灰色
 @btn-hold-color: 			@base-color-white;
-@btn-hold-bg: 				@base-color-grey-dark-sub;
-@btn-hold-border: 			@base-color-grey-dark-sub;
-//禁用：深灰色
+@btn-hold-bg: 				@base-color-grey-dark;
+@btn-hold-border: 			@base-color-grey-dark;
+//禁用：灰色
 @btn-desable-color: 		@base-color-white;
 @btn-desable-bg: 			@base-color-grey;
 @btn-desable-border: 		@base-color-grey;
