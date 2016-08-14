@@ -1,0 +1,124 @@
+﻿/*
+--- _box.less ---
+盒模型相关工具
+*/
+
+//浮动
+.float( @float-to ) {
+    float: @float-to;
+}
+
+//浮动
+.float-display( @float-to,@display ) {
+    float: @float-to;
+    display: @display;
+}
+
+//重置盒边距
+.reset-box-pm() {
+    margin: 0;
+    padding: 0;
+}
+
+// radius 圆角（通用）
+.radius ( @radius ) {
+    -webkit-border-radius: @radius;
+       -moz-border-radius: @radius;
+            border-radius: @radius;
+}
+
+// Borner radius 圆角（自定义）
+.border-radius ( @topLeft, @topRight, @bottomRight, @bottomLeft ) {
+    // Top Left
+    -webkit-border-top-left-radius: @topLeft;    
+        -moz-border-radius-topleft: @topLeft;   
+            border-top-left-radius: @topLeft;
+    // Top Right
+    -webkit-border-top-right-radius: @topRight;
+        -moz-border-radius-topright: @topRight;
+            border-top-right-radius: @topRight;
+    // Bottom Right
+    -webkit-border-bottom-right-radius: @bottomRight;
+        -moz-border-radius-bottomright: @bottomRight;
+            border-bottom-right-radius: @bottomRight;
+    // Bottom Left
+    -webkit-border-bottom-left-radius: @bottomLeft;
+        -moz-border-radius-bottomleft: @bottomLeft;
+            border-bottom-left-radius: @bottomLeft;
+}
+
+// Borner radius 左边圆角（自定义）
+.border-radius-left ( @left ) {
+    // Top Left
+    -webkit-border-top-left-radius: @left;    
+        -moz-border-radius-topleft: @left;   
+            border-top-left-radius: @left;
+    // Bottom Left
+    -webkit-border-bottom-left-radius: @left;
+        -moz-border-radius-bottomleft: @left;
+            border-bottom-left-radius: @left;
+}
+
+// Borner radius 右边圆角（自定义）
+.border-radius-right ( @right ) {
+    // Top Right
+    -webkit-border-top-right-radius: @right;
+        -moz-border-radius-topright: @right;
+            border-top-right-radius: @right;
+    // Bottom Right
+    -webkit-border-bottom-right-radius: @right;
+        -moz-border-radius-bottomright: @right;
+            border-bottom-right-radius: @right;
+}
+
+// Basic box shadow 阴影（通用）
+.box-shadow( @shadow ) {
+    -webkit-box-shadow: @shadow;
+       -moz-box-shadow: @shadow;
+            box-shadow: @shadow;
+}
+
+// Outer shadow 外阴影（自定义）
+.outer-shadow( @x:0, @y:1px, @blur:2px, @alpha:0.1 ) {
+    -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+       -moz-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+            box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+}
+
+// Inner shadow 内阴影（自定义）
+.inner-shadow( @x:0, @y:1px, @blur:2px, @alpha:0.4 ) {
+    -webkit-box-shadow: inset @x @y @blur rgba(0, 0, 0, @alpha);
+       -moz-box-shadow: inset @x @y @blur rgba(0, 0, 0, @alpha);
+            box-shadow: inset @x @y @blur rgba(0, 0, 0, @alpha);
+}
+
+// Background clip
+.background-clip( @argument: padding-box ) {
+  -webkit-background-clip: @argument;
+     -moz-background-clip: @argument;
+          background-clip: @argument;
+}
+
+// Box sizing
+.border-box( @sizing: border-box ) {
+  -webkit-box-sizing: @sizing;
+     -moz-box-sizing: @sizing;
+      -ms-box-sizing: @sizing;
+          box-sizing: @sizing;
+}
+
+.content-box( @sizing: content-box ) {
+  -webkit-box-sizing: @sizing;
+     -moz-box-sizing: @sizing;
+      -ms-box-sizing: @sizing;
+          box-sizing: @sizing;
+}
+
+// User select
+.user-select( @select: none ) {
+  -webkit-user-select: @select;
+     -moz-user-select: @select;
+      -ms-user-select: @select;
+       -o-user-select: @select;
+          user-select: @select;
+}

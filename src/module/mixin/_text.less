@@ -1,0 +1,135 @@
+﻿/*
+--- _text.less ---
+文本类 通用工具
+*/
+
+// Hide conntent
+.hide-text() {
+  font: 0/0 a;
+  border: 0;
+  color: transparent;
+  background-color: transparent;
+  text-shadow: none;
+  .box-shadow( none );  
+}
+
+//文本省略号
+.text-hide() {
+  overflow: hidden;
+  -webkit--o-text-overflow: ellipsis;
+  -moz-text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;  
+}
+
+//强制换行
+.word-wrap() {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    white-space: normal;
+}
+
+//A标签按钮-字符样式
+.link-btn ( @color,@hoverColor ) {
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    cursor: pointer;
+    color: @color;
+
+    &:hover,
+    &:active {
+        outline: none;
+        text-decoration: none;
+        color: @link-1-hover;
+    }
+}
+
+//亮色背景链接
+.link-in-light ( @color ) {
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    cursor: pointer;
+    color: @color;
+
+    &:hover,
+    &:active {
+        outline: none;
+        text-decoration: none;
+        color: @color + #111;
+    }
+}
+
+//暗色背景链接
+.link-in-dark ( @color ) {
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    cursor: pointer;
+    color: @color;
+
+    &:hover,
+    &:active {
+        outline: none;
+        text-decoration: none;
+        color: @color + #111;
+    }
+}
+
+.link ( @color,@text-decoration,@link-1-hover ) {
+    text-decoration: @text-decoration;
+    list-style: none;
+    outline: none;
+    cursor: pointer;
+    color: @color;
+
+    &:hover,
+    &:active {
+        color: @link-1-hover;
+        text-decoration: @text-decoration;
+        outline: none;
+    }
+}
+
+.custom-link( @color,@hover,@text-decoration ) {
+    text-decoration: @text-decoration;
+    list-style: none;
+    outline: none;
+    cursor: pointer;
+    color: @color;
+
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: @text-decoration;
+        outline: none;
+    }
+
+    &:hover,
+    &:active {
+        color: @hover;
+    }
+}
+
+.default-link( @color,@text-decoration ) {
+    text-decoration: @text-decoration;
+    list-style: none;
+    outline: none;
+    cursor: pointer;
+    color: @color;
+
+    &:hover,
+    &:active,
+    &:focus {
+        text-decoration: @text-decoration;
+        outline: none;
+    }
+
+    &:hover,
+    &:active {
+        color: @default-link-hover;
+    }
+}

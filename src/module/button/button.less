@@ -4,84 +4,91 @@
 @import "./_mixin";	//本类混合工具
 
 //-- 基础按钮 -----
-.btn {
+.s-btn {
 	display: inline-block;
 	padding: @padding-base-vertical @padding-base-horizontal;
 	color: @btn-normal-color;
-	font-size: @font-size-large;
+	font-size: @font-size-base;
 	text-align: center;
 	line-height: @line-height-base-small;
 	cursor: pointer;
+	white-space: nowrap;
+	vertical-align: middle;
 	background: @btn-normal-bg;
 	border: 1px solid @btn-normal-border;
-	border-radius: @btn-radius-base;
+	.radius(@btn-radius-base);
 	//-- 状态 -----
 	//hover
 	&:hover,
 	&.hover {
 		color: @btn-normal-color;
 		text-decoration: none;
-		box-shadow: inset 0 0 20px rgba(0,0,0,.2);
+		.box-shadow(inset 0 0 20px rgba(0,0,0,.2));
 	}
 	//active
 	&:active,
 	&.active {
-		box-shadow: inset 0 0 30px rgba(0,0,0,.35);
+		.box-shadow(inset 0 0 30px rgba(0,0,0,.35));
 	}
-	//desable
-	&.desable,
+	//desabled
+	&.desabled,
 	&[disabled] {
 		.btn-notting();
 	}
 }
 
 
-//-- 按钮类型 -----
-//默认：蓝色
-.btn-info {
-	.build-button(@btn-info-color, @btn-info-bg, @btn-info-border);
-}
-//成功：绿色
-.btn-success {
-	.build-button(@btn-success-color, @btn-success-bg, @btn-success-border);
-}
-//错误：红色
-.btn-error {
-	.build-button(@btn-error-color, @btn-error-bg, @btn-error-border);
-}
-//正常：白色
-.btn-normal {
-	.build-button(@btn-normal-color, @btn-normal-bg, @btn-normal-border);
-}
-//停止：深灰色
-.btn-hold {
-	.build-button(@btn-hold-color, @btn-hold-bg, @btn-hold-border);
-}
-//禁用：灰色
-.btn-desable {
-	.build-button(@btn-desable-color, @btn-desable-bg, @btn-desable-border);
-	.btn-notting();
+
+.s-btn {
+	//-- 按钮类型 -----
+	//默认：蓝色
+	&.s-info {
+		.build-button(@btn-info-color, @btn-info-bg, @btn-info-border);
+	}
+	//成功：绿色
+	&.s-success {
+		.build-button(@btn-success-color, @btn-success-bg, @btn-success-border);
+	}
+	//错误：红色
+	&.s-error {
+		.build-button(@btn-error-color, @btn-error-bg, @btn-error-border);
+	}
+	//正常：白色
+	&.s-normal {
+		.build-button(@btn-normal-color, @btn-normal-bg, @btn-normal-border);
+	}
+	//停止：深灰色
+	&.s-hold {
+		.build-button(@btn-hold-color, @btn-hold-bg, @btn-hold-border);
+	}
+	//禁用：灰色
+	&.s-desabled {
+		.build-button(@btn-desabled-color, @btn-desabled-bg, @btn-desabled-border);
+		.btn-notting();
+	}
+
+
+	//-- 按钮尺寸 -----
+	//大
+	&.s-lg {
+		font-size: @font-size-large-big;
+	}
+	//小
+	&.s-sm {
+		font-size: @font-size-small;
+	}
+	//超小
+	&.s-xs {
+		font-size: @font-size-small;
+		padding: @padding-small-vertical @padding-small-horizontal;
+	}
+
+
+	//-- 按钮块状 -----
+	.s-block {
+		display: block;
+		width: 100%;
+	}
 }
 
 
-//-- 按钮尺寸 -----
-//大
-.btn-lg {
-	font-size: @font-size-large-big;
-}
-//小
-.btn-sm {
-	font-size: @font-size-small;
-}
-//超小
-.btn-xs {
-	font-size: @font-size-small;
-	padding: @padding-small-vertical @padding-small-horizontal;
-}
-
-
-//-- 按钮块状 -----
-.btn-block {
-	display: block;
-	width: 100%;
-}

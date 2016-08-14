@@ -1,0 +1,63 @@
+/*
+--- mixin.less ---
+*/
+
+/**
+ * [.build-input 生成输入框 ]
+ * @author pmkx2 <185832959@qq.com>
+ * @date   2016-08-13
+ * @param  {[color]} @border-color [边框色]
+ * @param  {[color]} @background-color:#fff [背景色]
+ */
+.build-input( @border-color, @background-color:#fff ) {
+	border-color: @border-color;
+	background-color: @background-color;
+	&:focus, &.focus {
+		.box-shadow(0 0 5px lighten(@border-color, 20%));
+	}
+}
+
+/**
+ * [.input-group-color 输入框组色彩风格定义]
+ * @author pmkx2 <185832959@qq.com>
+ * @date   2016-08-13
+ * @param  {[color]} @border-color [边框色]
+ * @param  {[color]} @color:#fff [字体色]
+ */
+.input-group-color( @border-color, @color:#fff ) {
+	.s-addon, .s-addon-btn {
+		color: @color;
+		border-color: @border-color;
+		background-color: @border-color;
+	}
+	.s-input {
+		border-color: @border-color;
+		&:focus, &.focus {
+			.box-shadow(0 0 5px lighten(@border-color, 20%));
+		}
+	}
+}
+
+/**
+ * [.input-group-size 输入框组大小定义]
+ * @author pmkx2 <185832959@qq.com>
+ * @date   2016-08-13
+ * @param  {[size]} @font-size [字体大小]
+ * @param  {[size]} @padding:@padding-base-vertical @padding-base-horizontal [内边距]
+ */
+.input-group-size( @font-size, @padding:@padding-base-vertical @padding-base-horizontal ) {
+	.s-addon {
+		font-size: @font-size;
+		padding: @padding;
+	}
+	.s-input {
+		font-size: @font-size;
+		padding: @padding;
+	}
+	.s-addon-btn {
+		.s-btn {
+			font-size: @font-size;
+			padding: @padding;
+		}
+	}
+}

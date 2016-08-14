@@ -1,0 +1,67 @@
+/*
+--- alert.less ---
+*/
+@import "./_mixin";	//本类混合工具
+
+//-- 警告框 -----
+.s-alert {
+	position: relative;
+	padding: @alert-padding-base;
+	font-size: @font-size-base;
+	line-height: @line-height-base;
+	border: 1px solid @alert-normal-border;
+	margin-bottom: 10px;
+	.radius(@alert-radius-base);
+}
+
+.s-alert {
+	//-- 可关闭 --
+	&.s-dismissible {
+		padding-right: 40px;
+	}
+
+
+	//-- 关闭按钮 --
+	.s-close {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		padding: @padding-base-vertical;
+		color: @alert-normal-border;
+		border: none;
+		background: transparent;
+		&:hover, .hover {
+			color: @alert-normal-color;
+		}
+	}
+
+
+	//-- 状态 --
+	&.s-info {
+		.build-alert( @alert-info-color, @alert-info-border);
+	}
+	//成功：绿色
+	&.s-success {
+		.build-alert( @alert-success-color, @alert-success-border);
+	}
+	//错误：红色
+	&.s-error {
+		.build-alert( @alert-error-color, @alert-error-border);
+	}
+
+
+	//-- 按钮尺寸 -----
+	//大
+	&.s-lg {
+		font-size: @font-size-large-big;
+	}
+	//小
+	&.s-sm {
+		font-size: @font-size-small;
+	}
+	//超小
+	&.s-xs {
+		font-size: @font-size-small;
+		padding: @padding-small-vertical @padding-small-horizontal;
+	}
+}

@@ -1,0 +1,183 @@
+/*
+--- forms.less ---
+基础表格元素
+*/
+@import "./_mixin";	//本类混合工具
+
+//-- 文本输入控件 --
+.s-input {
+	display: inline-block;
+	width: 100%;
+	padding: @padding-base-vertical @padding-base-horizontal;
+	color: @input-default-color;
+	font-size: @font-size-base;
+	line-height: @line-height-base-small;
+	border: 1px solid @input-default-border;
+	.radius(@input-radius-base);
+
+	//focus
+	&:focus, &.focus {
+		border-color: @input-focus-border-color;
+		.box-shadow(0 0 5px lighten(@input-focus-border-color, 20%));
+	}
+
+
+	//-- input 状态 --
+	//内容：蓝色
+	&.s-info {
+		.build-input(@input-focus-border-color);
+	}
+	//成功：绿色
+	&.s-success {
+		.build-input(@input-success-border);
+	}
+	//错误：红色
+	&.s-error {
+		.build-input(@input-error-border);
+	}
+	//禁用：灰色
+	&.desabled,
+	&[desabled] {
+		.build-input(@input-desabled-border, @input-desabled-bg);
+		color: @input-desabled-color;
+		cursor: not-allowed;
+	}
+
+
+	//-- input 尺寸 --
+	//大
+	&.s-lg {
+		font-size: @font-size-large-big;
+	}
+	//小
+	&.s-sm {
+		font-size: @font-size-small;
+	}
+	//超小
+	&.s-xs {
+		font-size: @font-size-small;
+		padding: @padding-small-vertical @padding-small-horizontal;
+	}
+
+
+	//-- input 元素 --
+	&.s-inline {
+		display: inline;
+		width: auto;
+	}
+	&.no-border {
+		border-width: 0;
+		&:focus, &.focus {
+			.box-shadow(0 0 5px @input-focus-border-color);
+		}
+	}
+	&:before {
+		context:".";
+	}
+}
+
+
+
+
+//-- input 输入框组 --
+.s-input-group {
+	position: relative;
+	display: table;
+	//addon - label
+	.s-addon, .s-addon-btn {
+		position: relative;
+		display: table-cell;
+		padding-left: @padding-base-horizontal;
+		padding-right: @padding-base-horizontal;
+		width: 1%;
+		white-space: nowrap;
+		vertical-align: middle;
+		background-color: @input-default-bg-dark;
+		border: 1px solid @input-default-border;
+		.radius(@input-radius-base);
+		//无底色label
+		&.no-bg {
+			padding-left: 0;
+			padding-right: 0;
+			border-left-width: 0; 
+			border-right-width: 0;
+			background-color: transparent;
+		}
+	}
+	//s-input
+	.s-input {
+		position: relative;
+		z-index: 1;
+		display: table-cell;
+	}
+	//s-addon-btn 按钮特有属性
+	.s-addon-btn {
+		padding-left: 0;
+		padding-right: 0;
+		> .s-btn {
+			width: 100%;
+			border: 0;
+		}
+	}
+}
+//输入框组属性
+.s-input-group{
+	//-- group 排版
+	> :not(:last-child),
+	> .s-addon-btn:not(:last-child) > .s-btn {
+		.border-radius-right(0);
+		border-right-width: 0;
+	}
+	> :not(:first-child),
+	> .s-addon-btn:not(:first-child) > .s-btn {
+		.border-radius-left(0);
+		border-right-width: 0;
+	}
+	> :last-child {
+		border-right-width: 1px;
+	}
+
+
+	//-- group 风格 --
+	//一般：蓝色
+	&.s-info {
+		.input-group-color(@input-focus-border-color);
+	}
+	//成功：绿色
+	&.s-success {
+		.input-group-color(@input-success-border);
+	}
+	//错误：红色
+	&.s-error {
+		.input-group-color(@input-error-border);
+	}
+
+
+	//-- group 尺寸 --
+	//大
+	&.s-lg {
+		.input-group-size(@font-size-large-big);
+	}
+	//小
+	&.s-sm {
+		.input-group-size(@font-size-small);
+	}
+	//超小
+	&.s-xs {
+		.input-group-size(@font-size-small, @padding-small-vertical @padding-small-horizontal);
+	}
+}
+
+
+
+
+
+//-- 单选 --
+.s-radio {
+	display: inline-block;
+}
+
+//-- 多选 --
+.s-checkbox {
+	display: inline-block;
+}

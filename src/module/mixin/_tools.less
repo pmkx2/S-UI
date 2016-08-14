@@ -1,0 +1,61 @@
+﻿/*
+--- _tools.less ---
+开发与试验版 通用工具
+*/
+
+
+// Opacity 透明度，默认为50%
+.opacity( @opacity: 0.5 ) {
+  opacity: @opacity;
+  @opperc: @opacity * 100;
+  filter: ~"alpha(opacity=@{opperc})";
+}
+
+// Hide block
+.hide() {
+  display: none;
+}
+
+
+// -- 箭头样式 ---------------------
+//样式箭头
+.arrow-down ( @ysize,@xsize ) {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    border-top: @ysize solid;
+    border-right: @xsize solid transparent;
+    border-left: @xsize solid transparent;
+}
+.arrow-updown ( @border,@ysize,@xsize ) {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    @{border}: @ysize solid;
+    border-right: @xsize solid transparent;
+    border-left: @xsize solid transparent;
+}
+
+//样式上下箭头
+.arrow-up-or-down( @border-top-or-bottom,@ysize,@xsize,@arrowcolor ) {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    @{border-top-or-bottom}: @ysize solid @arrowcolor;
+    border-right: @xsize solid transparent;
+    border-left: @xsize solid transparent;
+}
+
+//样式左右箭头
+.arrow-left-or-right( @border-left-or-right,@xsize,@ysize,@arrowcolor ) {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+    @{border-left-or-right}: @xsize solid @arrowcolor;
+    border-top: @ysize solid transparent;
+    border-bottom: @ysize solid transparent;
+}

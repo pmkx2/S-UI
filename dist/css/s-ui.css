@@ -230,6 +230,11 @@ body {
 .unline {
   text-decoration: underline;
 }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 /* 浮动、清除浮动 */
 .fl {
   float: left;
@@ -482,126 +487,865 @@ body {
 --- mixin.less ---
 公共使用的方法工具
 */
+/* animate：
+*  动画类
+*/
+/* 盒模型：
+*  边框、阴影、内外边距、浮动、背景
+*/
+/*
+--- _box.less ---
+盒模型相关工具
+*/
+/* 文本类：
+*  超链接、文本处理
+*/
+/*
+--- _text.less ---
+文本类 通用工具
+*/
+/* 渐变与动态动画等：
+*  transition、缩放、旋转等
+*/
+/*
+--- _transition.less ---
+渐变与动态动画等 相关工具
+*/
+@-webkit-keyframes changeColor {
+  0% {
+    color: #6cbb57;
+  }
+  25% {
+    color: #f8634d;
+  }
+  50% {
+    color: #3687c8;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: purple;
+  }
+}
+@-moz-keyframes changeColor {
+  0% {
+    color: #6cbb57;
+  }
+  25% {
+    color: #f8634d;
+  }
+  50% {
+    color: #3687c8;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: purple;
+  }
+}
+@-o-keyframes changeColor {
+  0% {
+    color: #6cbb57;
+  }
+  25% {
+    color: #f8634d;
+  }
+  50% {
+    color: #3687c8;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: purple;
+  }
+}
+@-ms-keyframes changeColor {
+  0% {
+    color: #6cbb57;
+  }
+  25% {
+    color: #f8634d;
+  }
+  50% {
+    color: #3687c8;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: purple;
+  }
+}
+@keyframes changeColor {
+  0% {
+    color: #6cbb57;
+  }
+  25% {
+    color: #f8634d;
+  }
+  50% {
+    color: #3687c8;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: purple;
+  }
+}
+@-webkit-keyframes changeColor {
+  0% {
+    color: #6cbb57;
+  }
+  25% {
+    color: #f8634d;
+  }
+  50% {
+    color: #3687c8;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: purple;
+  }
+}
+@-moz-keyframes changeColor {
+  0% {
+    color: #6cbb57;
+  }
+  25% {
+    color: #f8634d;
+  }
+  50% {
+    color: #3687c8;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: purple;
+  }
+}
+@keyframes changeColor {
+  0% {
+    color: #6cbb57;
+  }
+  25% {
+    color: #f8634d;
+  }
+  50% {
+    color: #3687c8;
+  }
+  75% {
+    color: orange;
+  }
+  100% {
+    color: purple;
+  }
+}
+@-webkit-keyframes showEcCtrl {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 98px);
+    -moz-transform: translate(0, 98px);
+    -ms-transform: translate(0, 98px);
+    -o-transform: translate(0, 98px);
+    transform: translate(0, 98px);
+  }
+}
+@-moz-keyframes showEcCtrl {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 98px);
+    -moz-transform: translate(0, 98px);
+    -ms-transform: translate(0, 98px);
+    -o-transform: translate(0, 98px);
+    transform: translate(0, 98px);
+  }
+}
+@-o-keyframes showEcCtrl {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 98px);
+    -moz-transform: translate(0, 98px);
+    -ms-transform: translate(0, 98px);
+    -o-transform: translate(0, 98px);
+    transform: translate(0, 98px);
+  }
+}
+@-ms-keyframes showEcCtrl {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 98px);
+    -moz-transform: translate(0, 98px);
+    -ms-transform: translate(0, 98px);
+    -o-transform: translate(0, 98px);
+    transform: translate(0, 98px);
+  }
+}
+@keyframes showEcCtrl {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 98px);
+    -moz-transform: translate(0, 98px);
+    -ms-transform: translate(0, 98px);
+    -o-transform: translate(0, 98px);
+    transform: translate(0, 98px);
+  }
+}
+@-webkit-keyframes showEcCtrl {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 98px);
+    -moz-transform: translate(0, 98px);
+    -ms-transform: translate(0, 98px);
+    -o-transform: translate(0, 98px);
+    transform: translate(0, 98px);
+  }
+}
+@-moz-keyframes showEcCtrl {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 98px);
+    -moz-transform: translate(0, 98px);
+    -ms-transform: translate(0, 98px);
+    -o-transform: translate(0, 98px);
+    transform: translate(0, 98px);
+  }
+}
+@keyframes showEcCtrl {
+  0% {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(0, 98px);
+    -moz-transform: translate(0, 98px);
+    -ms-transform: translate(0, 98px);
+    -o-transform: translate(0, 98px);
+    transform: translate(0, 98px);
+  }
+}
+@-webkit-keyframes showflick {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 667px;
+  }
+}
+@-moz-keyframes showflick {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 667px;
+  }
+}
+@-o-keyframes showflick {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 667px;
+  }
+}
+@-ms-keyframes showflick {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 667px;
+  }
+}
+@keyframes showflick {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 667px;
+  }
+}
+@-webkit-keyframes showflick {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 667px;
+  }
+}
+@-moz-keyframes showflick {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 667px;
+  }
+}
+@keyframes showflick {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 667px;
+  }
+}
+/* 开发与试验版：
+*  透明度、箭头、隐藏等
+*/
+/*
+--- _tools.less ---
+开发与试验版 通用工具
+*/
 /*
 --- button.less ---
 */
 /*
 --- mixin.less ---
 */
-.btn {
+/**
+ * [.build-button 生成按钮]
+ * @author pmkx2 <185832959@qq.com>
+ * @date   2016-08-13
+ * @param  {[color]} @text-color [文字色]
+ * @param  {[color]} @bg-color [背景色]
+ * @param  {[color]} @border-color [边框色]
+ */
+/**
+ * [.btn-notting 禁止按钮状态]
+ * @author pmkx2 <185832959@qq.com>
+ * @date   2016-08-13
+ */
+.s-btn {
   display: inline-block;
-  padding: 5px 10px;
+  padding: 6px 12px;
   color: #434a54;
-  font-size: 17.5px;
+  font-size: 14px;
   text-align: center;
   line-height: 1.25;
   cursor: pointer;
+  white-space: nowrap;
+  vertical-align: middle;
   background: #fff;
   border: 1px solid #b7b7b7;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
   border-radius: 5px;
 }
-.btn:hover,
-.btn.hover {
+.s-btn:hover,
+.s-btn.hover {
   color: #434a54;
   text-decoration: none;
+  -ms-box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
 }
-.btn:active,
-.btn.active {
+.s-btn:active,
+.s-btn.active {
+  -ms-box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.35);
   box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.35);
 }
-.btn.desable,
-.btn[disabled] {
+.s-btn.desabled,
+.s-btn[disabled] {
   cursor: not-allowed;
+  opacity: 0.007;
+  filter: alpha(opacity=0.7);
   opacity: 0.7;
+  filter: alpha(opacity=70);
 }
-.btn.desable:hover,
-.btn[disabled]:hover,
-.btn.desable.hover,
-.btn[disabled].hover {
+.s-btn.desabled:hover,
+.s-btn[disabled]:hover,
+.s-btn.desabled.hover,
+.s-btn[disabled].hover {
+  -ms-box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
   box-shadow: none;
 }
-.btn.desable:active,
-.btn[disabled]:active,
-.btn.desable.active,
-.btn[disabled].active {
+.s-btn.desabled:active,
+.s-btn[disabled]:active,
+.s-btn.desabled.active,
+.s-btn[disabled].active {
+  -ms-box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
   box-shadow: none;
 }
-.btn-info {
+.s-btn.s-info {
   color: #fff;
   background: #3bafda;
   border-color: #3bafda;
 }
-.btn-info:hover,
-.btn-info.hover {
+.s-btn.s-info:hover,
+.s-btn.s-info.hover {
   color: #fff;
 }
-.btn-success {
+.s-btn.s-success {
   color: #fff;
   background: #95be3e;
   border-color: #95be3e;
 }
-.btn-success:hover,
-.btn-success.hover {
+.s-btn.s-success:hover,
+.s-btn.s-success.hover {
   color: #fff;
 }
-.btn-error {
+.s-btn.s-error {
   color: #fff;
   background: #ff6666;
   border-color: #ff6666;
 }
-.btn-error:hover,
-.btn-error.hover {
+.s-btn.s-error:hover,
+.s-btn.s-error.hover {
   color: #fff;
 }
-.btn-normal {
+.s-btn.s-normal {
   color: #434a54;
   background: #fff;
   border-color: #b7b7b7;
 }
-.btn-normal:hover,
-.btn-normal.hover {
+.s-btn.s-normal:hover,
+.s-btn.s-normal.hover {
   color: #434a54;
 }
-.btn-hold {
+.s-btn.s-hold {
   color: #fff;
   background: #b7b7b7;
   border-color: #b7b7b7;
 }
-.btn-hold:hover,
-.btn-hold.hover {
+.s-btn.s-hold:hover,
+.s-btn.s-hold.hover {
   color: #fff;
 }
-.btn-desable {
+.s-btn.s-desabled {
   color: #fff;
   background: #ddd;
   border-color: #ddd;
   cursor: not-allowed;
+  opacity: 0.007;
+  filter: alpha(opacity=0.7);
   opacity: 0.7;
+  filter: alpha(opacity=70);
 }
-.btn-desable:hover,
-.btn-desable.hover {
+.s-btn.s-desabled:hover,
+.s-btn.s-desabled.hover {
   color: #fff;
 }
-.btn-desable:hover,
-.btn-desable.hover {
+.s-btn.s-desabled:hover,
+.s-btn.s-desabled.hover {
+  -ms-box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
   box-shadow: none;
 }
-.btn-desable:active,
-.btn-desable.active {
+.s-btn.s-desabled:active,
+.s-btn.s-desabled.active {
+  -ms-box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
   box-shadow: none;
 }
-.btn-lg {
-  font-size: 23.8px;
+.s-btn.s-lg {
+  font-size: 23px;
 }
-.btn-sm {
-  font-size: 11.9px;
+.s-btn.s-sm {
+  font-size: 11px;
 }
-.btn-xs {
-  font-size: 11.9px;
-  padding: 2px 5px;
+.s-btn.s-xs {
+  font-size: 11px;
+  padding: 2px 6px;
 }
-.btn-block {
+.s-btn .s-block {
   display: block;
   width: 100%;
+}
+/*
+--- forms.less ---
+基础表格元素
+*/
+/*
+--- mixin.less ---
+*/
+/**
+ * [.build-input 生成输入框 ]
+ * @author pmkx2 <185832959@qq.com>
+ * @date   2016-08-13
+ * @param  {[color]} @border-color [边框色]
+ * @param  {[color]} @background-color:#fff [背景色]
+ */
+/**
+ * [.input-group-color 输入框组色彩风格定义]
+ * @author pmkx2 <185832959@qq.com>
+ * @date   2016-08-13
+ * @param  {[color]} @border-color [边框色]
+ * @param  {[color]} @color:#fff [字体色]
+ */
+/**
+ * [.input-group-size 输入框组大小定义]
+ * @author pmkx2 <185832959@qq.com>
+ * @date   2016-08-13
+ * @param  {[size]} @font-size [字体大小]
+ * @param  {[size]} @padding:@padding-base-vertical @padding-base-horizontal [内边距]
+ */
+.s-input {
+  display: inline-block;
+  width: 100%;
+  padding: 6px 12px;
+  color: #434a54;
+  font-size: 14px;
+  line-height: 1.25;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.s-input:focus,
+.s-input.focus {
+  border-color: #4fc1e9;
+  -ms-box-shadow: 0 0 5px #aae1f4;
+  -webkit-box-shadow: 0 0 5px #aae1f4;
+  -moz-box-shadow: 0 0 5px #aae1f4;
+  box-shadow: 0 0 5px #aae1f4;
+}
+.s-input.s-info {
+  border-color: #4fc1e9;
+  background-color: #fff;
+}
+.s-input.s-info:focus,
+.s-input.s-info.focus {
+  -ms-box-shadow: 0 0 5px #aae1f4;
+  -webkit-box-shadow: 0 0 5px #aae1f4;
+  -moz-box-shadow: 0 0 5px #aae1f4;
+  box-shadow: 0 0 5px #aae1f4;
+}
+.s-input.s-success {
+  border-color: #95be3e;
+  background-color: #fff;
+}
+.s-input.s-success:focus,
+.s-input.s-success.focus {
+  -ms-box-shadow: 0 0 5px #bfd989;
+  -webkit-box-shadow: 0 0 5px #bfd989;
+  -moz-box-shadow: 0 0 5px #bfd989;
+  box-shadow: 0 0 5px #bfd989;
+}
+.s-input.s-error {
+  border-color: #ff6666;
+  background-color: #fff;
+}
+.s-input.s-error:focus,
+.s-input.s-error.focus {
+  -ms-box-shadow: 0 0 5px #ffcccc;
+  -webkit-box-shadow: 0 0 5px #ffcccc;
+  -moz-box-shadow: 0 0 5px #ffcccc;
+  box-shadow: 0 0 5px #ffcccc;
+}
+.s-input.desabled,
+.s-input[desabled] {
+  border-color: #ddd;
+  background-color: #f1f1f1;
+  color: #b7b7b7;
+  cursor: not-allowed;
+}
+.s-input.desabled:focus,
+.s-input[desabled]:focus,
+.s-input.desabled.focus,
+.s-input[desabled].focus {
+  -ms-box-shadow: 0 0 5px #ffffff;
+  -webkit-box-shadow: 0 0 5px #ffffff;
+  -moz-box-shadow: 0 0 5px #ffffff;
+  box-shadow: 0 0 5px #ffffff;
+}
+.s-input.s-lg {
+  font-size: 23px;
+}
+.s-input.s-sm {
+  font-size: 11px;
+}
+.s-input.s-xs {
+  font-size: 11px;
+  padding: 2px 6px;
+}
+.s-input.s-inline {
+  display: inline;
+  width: auto;
+}
+.s-input.no-border {
+  border-width: 0;
+}
+.s-input.no-border:focus,
+.s-input.no-border.focus {
+  -ms-box-shadow: 0 0 5px #4fc1e9;
+  -webkit-box-shadow: 0 0 5px #4fc1e9;
+  -moz-box-shadow: 0 0 5px #4fc1e9;
+  box-shadow: 0 0 5px #4fc1e9;
+}
+.s-input:before {
+  context: ".";
+}
+.s-input-group {
+  position: relative;
+  display: table;
+}
+.s-input-group .s-addon,
+.s-input-group .s-addon-btn {
+  position: relative;
+  display: table-cell;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.s-input-group .s-addon.no-bg,
+.s-input-group .s-addon-btn.no-bg {
+  padding-left: 0;
+  padding-right: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  background-color: transparent;
+}
+.s-input-group .s-input {
+  position: relative;
+  z-index: 1;
+  display: table-cell;
+}
+.s-input-group .s-addon-btn {
+  padding-left: 0;
+  padding-right: 0;
+}
+.s-input-group .s-addon-btn > .s-btn {
+  width: 100%;
+  border: 0;
+}
+.s-input-group > :not(:last-child),
+.s-input-group > .s-addon-btn:not(:last-child) > .s-btn {
+  -webkit-border-top-right-radius: 0;
+  -moz-border-radius-topright: 0;
+  border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  border-bottom-right-radius: 0;
+  border-right-width: 0;
+}
+.s-input-group > :not(:first-child),
+.s-input-group > .s-addon-btn:not(:first-child) > .s-btn {
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-left-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-left-radius: 0;
+  border-right-width: 0;
+}
+.s-input-group > :last-child {
+  border-right-width: 1px;
+}
+.s-input-group.s-info .s-addon,
+.s-input-group.s-info .s-addon-btn {
+  color: #fff;
+  border-color: #4fc1e9;
+  background-color: #4fc1e9;
+}
+.s-input-group.s-info .s-input {
+  border-color: #4fc1e9;
+}
+.s-input-group.s-info .s-input:focus,
+.s-input-group.s-info .s-input.focus {
+  -ms-box-shadow: 0 0 5px #aae1f4;
+  -webkit-box-shadow: 0 0 5px #aae1f4;
+  -moz-box-shadow: 0 0 5px #aae1f4;
+  box-shadow: 0 0 5px #aae1f4;
+}
+.s-input-group.s-success .s-addon,
+.s-input-group.s-success .s-addon-btn {
+  color: #fff;
+  border-color: #95be3e;
+  background-color: #95be3e;
+}
+.s-input-group.s-success .s-input {
+  border-color: #95be3e;
+}
+.s-input-group.s-success .s-input:focus,
+.s-input-group.s-success .s-input.focus {
+  -ms-box-shadow: 0 0 5px #bfd989;
+  -webkit-box-shadow: 0 0 5px #bfd989;
+  -moz-box-shadow: 0 0 5px #bfd989;
+  box-shadow: 0 0 5px #bfd989;
+}
+.s-input-group.s-error .s-addon,
+.s-input-group.s-error .s-addon-btn {
+  color: #fff;
+  border-color: #ff6666;
+  background-color: #ff6666;
+}
+.s-input-group.s-error .s-input {
+  border-color: #ff6666;
+}
+.s-input-group.s-error .s-input:focus,
+.s-input-group.s-error .s-input.focus {
+  -ms-box-shadow: 0 0 5px #ffcccc;
+  -webkit-box-shadow: 0 0 5px #ffcccc;
+  -moz-box-shadow: 0 0 5px #ffcccc;
+  box-shadow: 0 0 5px #ffcccc;
+}
+.s-input-group.s-lg .s-addon {
+  font-size: 23px;
+  padding: 6px 12px;
+}
+.s-input-group.s-lg .s-input {
+  font-size: 23px;
+  padding: 6px 12px;
+}
+.s-input-group.s-lg .s-addon-btn .s-btn {
+  font-size: 23px;
+  padding: 6px 12px;
+}
+.s-input-group.s-sm .s-addon {
+  font-size: 11px;
+  padding: 6px 12px;
+}
+.s-input-group.s-sm .s-input {
+  font-size: 11px;
+  padding: 6px 12px;
+}
+.s-input-group.s-sm .s-addon-btn .s-btn {
+  font-size: 11px;
+  padding: 6px 12px;
+}
+.s-input-group.s-xs .s-addon {
+  font-size: 11px;
+  padding: 2px 6px;
+}
+.s-input-group.s-xs .s-input {
+  font-size: 11px;
+  padding: 2px 6px;
+}
+.s-input-group.s-xs .s-addon-btn .s-btn {
+  font-size: 11px;
+  padding: 2px 6px;
+}
+.s-radio {
+  display: inline-block;
+}
+.s-checkbox {
+  display: inline-block;
+}
+/*
+--- alert.less ---
+*/
+/*
+--- mixin.less ---
+*/
+/**
+ * [.build-alert 生成警告框]
+ * @author pmkx2 <185832959@qq.com>
+ * @date   2016-08-14
+ * @param  {[color]} @color [字体色]
+ * @param  {[color]} @border-color [边框色]
+ */
+.s-alert {
+  position: relative;
+  padding: 15px 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.s-alert.s-dismissible {
+  padding-right: 40px;
+}
+.s-alert .s-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 6px;
+  color: #ddd;
+  border: none;
+  background: transparent;
+}
+.s-alert .s-close:hover,
+.s-alert .s-close .hover {
+  color: #434a54;
+}
+.s-alert.s-info {
+  color: #3bafda;
+  border-color: #ddd;
+}
+.s-alert.s-success {
+  color: #95be3e;
+  border-color: #ddd;
+}
+.s-alert.s-error {
+  color: #ff6666;
+  border-color: #ddd;
+}
+.s-alert.s-lg {
+  font-size: 23px;
+}
+.s-alert.s-sm {
+  font-size: 11px;
+}
+.s-alert.s-xs {
+  font-size: 11px;
+  padding: 2px 6px;
 }
