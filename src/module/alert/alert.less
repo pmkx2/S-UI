@@ -26,6 +26,7 @@
 		position: absolute;
 		right: 10px;
 		top: 10px;
+		font-size: inherit;
 		padding: @padding-base-vertical;
 		color: @alert-normal-border;
 		border: none;
@@ -53,15 +54,14 @@
 	//-- 按钮尺寸 -----
 	//大
 	&.s-lg {
-		font-size: @font-size-large-big;
+		.build-alert-size( @font-size-large-big, @alert-padding-large);
 	}
 	//小
 	&.s-sm {
-		font-size: @font-size-small;
+		.build-alert-size( @font-size-small, @alert-padding-small);
 	}
 	//超小
 	&.s-xs {
-		font-size: @font-size-small;
-		padding: @padding-small-vertical @padding-small-horizontal;
+		.build-alert-size( @font-size-small, @alert-padding-small-x);
 	}
 }
